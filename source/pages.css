@@ -1,4 +1,4 @@
-/* #loader {
+#loader {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,7 +206,7 @@
     100% {
         transform: rotateY(0deg);
     }
-} */
+}
 .bg-con {
     border-top: 4px solid rgb(19, 158, 176);
     border-radius: 4px;

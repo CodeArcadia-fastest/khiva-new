@@ -1,11 +1,11 @@
-// // Блокировка прокрутки страницы
-// document.body.style.overflow = 'hidden';
+// Блокировка прокрутки страницы
+document.body.style.overflow = 'hidden';
 
-// // Через 3 секунды скрываем лоадер и разблокируем прокрутку
-// setTimeout(function() {
-//   document.getElementById('loader').style.display = 'none';
-//   document.body.style.overflow = 'auto';  // Разблокируем прокрутку
-// }, 3000);
+// Через 3 секунды скрываем лоадер и разблокируем прокрутку
+setTimeout(function() {
+  document.getElementById('loader').style.display = 'none';
+  document.body.style.overflow = 'auto';  // Разблокируем прокрутку
+}, 3000);
 
 
 function openModal(img) {
