@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // После того как индикатор скрыт, запускаем анимацию чисел
         animateNumbers();
         
-      }, 5000); // анимация загрузки длится 5 секунд
+      }, 3000); // анимация загрузки длится 5 секунд
     } else {
       // Если прошло меньше 15 секунд, сразу скрываем анимацию загрузки
       document.querySelector('.loadings').style.display = 'none';
