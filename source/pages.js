@@ -5,7 +5,7 @@ document.body.style.overflow = 'hidden';
 setTimeout(function() {
   document.getElementById('loader').style.display = 'none';
   document.body.style.overflow = 'auto';  // Разблокируем прокрутку
-}, 3000);
+}, 1000);
 
 
 function openModal(img) {

@@ -233,6 +233,12 @@ body {
   overflow-y: auto;
 }
 
+.list-group-item:hover {
+  background-color: #5c8df632;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
 
 
 /* From Uiverse.io by Nawsome */ 

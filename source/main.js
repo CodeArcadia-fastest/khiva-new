@@ -1,34 +1,38 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const lastLoadedTime = localStorage.getItem('lastLoadedTime');  // Получаем время последнего показа
-    const currentTime = new Date().getTime();  // Текущее время в миллисекундах
-    const delay = 15000; // 15 секунд (в миллисекундах)
-  
-    // Проверяем, если прошло больше 15 секунд с последнего показа анимации
-    if (!lastLoadedTime || (currentTime - lastLoadedTime) > delay) {
-      // Блокируем прокрутку
-      document.body.style.overflow = 'hidden';
-      
-      // Показываем анимацию загрузки и скрываем её через 5 секунд
-      setTimeout(function() {
-        document.querySelector('.loadings').style.display = 'none';
-        // Разблокируем прокрутку
-        document.body.style.overflow = 'auto';
-        
-        // Сохраняем в localStorage информацию о времени последнего показа
-        localStorage.setItem('lastLoadedTime', currentTime);
-        
-        // После того как индикатор скрыт, запускаем анимацию чисел
-        animateNumbers();
-        
-      }, 3000); // анимация загрузки длится 5 секунд
-    } else {
-      // Если прошло меньше 15 секунд, сразу скрываем анимацию загрузки
+  // Блокируем прокрутку
+  document.body.style.overflow = 'hidden';
+
+  // Показываем анимацию загрузки
+  document.querySelector('.loadings').style.display = 'flex';
+
+  // Скрываем анимацию загрузки через 1 секунду (или по другой длительности)
+  setTimeout(function() {
+    document.querySelector('.loadings').style.display = 'none';
+    // Разблокируем прокрутку
+    document.body.style.overflow = 'auto';
+
+    // После того как индикатор скрыт, запускаем анимацию чисел
+    animateNumbers();
+
+  }, 1000); // анимация загрузки длится 1 секунду
+
+  // Показываем анимацию каждые 15 секунд
+  setInterval(function() {
+    // Блокируем прокрутку
+    document.body.style.overflow = 'hidden';
+
+    // Показываем анимацию загрузки
+    document.querySelector('.loadings').style.display = 'block';
+
+    // Скрываем анимацию загрузки через 1 секунду
+    setTimeout(function() {
       document.querySelector('.loadings').style.display = 'none';
-      
-      // Сразу запускаем анимацию чисел
-      animateNumbers();
-    }
-  });
+      // Разблокируем прокрутку
+      document.body.style.overflow = 'auto';
+    }, 1000); // анимация загрузки длится 1 секунду
+  }, 15000); // повторяется каждые 15 секунд
+});
+
   
   // Функция анимации чисел
   function animateNumbers() {
