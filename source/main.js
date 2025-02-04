@@ -15,24 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     animateNumbers();
 
   }, 1000); // анимация загрузки длится 1 секунду
-
-  // Показываем анимацию каждые 15 секунд
-  setInterval(function() {
-    // Блокируем прокрутку
-    document.body.style.overflow = 'hidden';
-
-    // Показываем анимацию загрузки
-    document.querySelector('.loadings').style.display = 'block';
-
-    // Скрываем анимацию загрузки через 1 секунду
-    setTimeout(function() {
-      document.querySelector('.loadings').style.display = 'none';
-      // Разблокируем прокрутку
-      document.body.style.overflow = 'auto';
-    }, 1000); // анимация загрузки длится 1 секунду
-  }, 15000); // повторяется каждые 15 секунд
-});
-
+})
   
   // Функция анимации чисел
   function animateNumbers() {
